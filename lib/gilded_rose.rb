@@ -17,10 +17,8 @@ class GildedRose
         if @name != "Sulfuras, Hand of Ragnaros"
 	  if @name != "Conjured Mana Cake"
             effect = -1
-	  else
-	    if @quality > 1
-	      effect = -2
-	    end
+	  elsif @quality > 1
+	    effect = -2
 	  end
         end
       end
@@ -28,15 +26,11 @@ class GildedRose
       if @quality < 50
         effect = 1
         if @name == "Backstage passes to a TAFKAL80ETC concert"
-          if @days_remaining < 11
-            if @quality < 50
+          if @days_remaining < 11 and @quality < 50
               effect = effect + 1
-            end
           end
-          if @days_remaining < 6
-            if @quality < 50
+          if @days_remaining < 6 and @quality <50
               effect = effect + 1 
-            end
           end
         end
       end
